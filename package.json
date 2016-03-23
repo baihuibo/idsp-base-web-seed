@@ -15,5 +15,19 @@
   "bugs": {
     "url": "https://github.com/baihuibo/idsp-base-web-seed/issues"
   },
+  "dependencies": {
+    "angular": "^1.5.2",
+    "angular-resource": "^1.5.2",
+    "angular-route": "^1.5.2",
+    "jquery": "^2.2.1",
+    "lodash": "^4.6.1",
+    "moment": "^2.12.0",
+    "plugin-typescript": "^4.0.1",
+    "systemjs": "^0.19.24",
+    "systemjs-plugin-css": "^0.1.20",
+    "systemjs-plugin-json": "^0.1.0",
+    "traceur": "0.0.104",
+    "typescript": "^1.8.7"
+  },
   "homepage": "https://github.com/baihuibo/idsp-base-web-seed#readme"
 }

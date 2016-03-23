@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>initialize</title>
+</head>
+<body>
+
+<div>
+    <h1>hello index</h1>
+    <h6> 1 + 2 = {{1 + 2}}</h6>
+    <hello-word></hello-word>
+</div>
+
+<script src="../node_modules/systemjs/dist/system.js"></script>
+<script src="scripts/__base/system.config.js"></script>
+<script>
+    SystemJS.config({
+        //模块别名映射
+        map: {
+            app: 'scripts/common/app',
+            annotation: 'scripts/common/annotation',
+            util: 'scripts/common/util',
+            config: 'scripts/config'
+        },
+
+        //模块加载描述
+        meta: {},
+
+        //路径别名
+        //目前已有 node/  指向 ../node_modules/
+        paths: {}
+    });
+
+    SystemJS.import('scripts/start');
+</script>
+</body>
+</html>
