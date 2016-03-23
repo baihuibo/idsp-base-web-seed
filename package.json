@@ -1,0 +1,19 @@
+{
+  "name": "idsp-base-web-seed",
+  "version": "0.0.1",
+  "description": "idsp web project seed",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baihuibo/idsp-base-web-seed.git"
+  },
+  "author": "baihuibo@hotmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baihuibo/idsp-base-web-seed/issues"
+  },
+  "homepage": "https://github.com/baihuibo/idsp-base-web-seed#readme"
+}
