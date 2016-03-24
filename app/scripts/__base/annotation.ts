@@ -25,7 +25,7 @@ export function BeforeConfig(target) {
 
 //设置路由
 export function Route(option:RouteOption) {
-    return function (target:Function) {
+    return function (target) {
         if (!option.controller) {
             option.controller = target.name;
         }
@@ -46,9 +46,4 @@ export function Controller(strOrFunc) {
     } else {
         throw Error("@Controller 必须标注在 function or Class");
     }
-}
-
-
-export function Test() {
-
 }

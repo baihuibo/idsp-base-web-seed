@@ -18,9 +18,11 @@ let route = "/manage";
 class ManageCtrl implements manage.ICtrl {
     public users:User[];
     private sortFlag:boolean;
+    public name:string;
 
-    constructor(public $scope:IScope) {
+    constructor(public $scope:IScope, public menu) {
         this.users = this.queryUser();
+        this.name = "hello ctrl";
     }
 
     order() {
