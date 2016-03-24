@@ -1,6 +1,6 @@
 {
   "name": "idsp-base-web-seed",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "idsp web project seed",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,8 @@
     "angular": "^1.5.2",
     "angular-resource": "^1.5.2",
     "angular-route": "^1.5.2",
+    "async": "^2.0.0-rc.2",
+    "copy": "^0.2.0",
     "jquery": "^2.2.1",
     "lodash": "^4.6.1",
     "moment": "^2.12.0",

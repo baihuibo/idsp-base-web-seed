@@ -3,10 +3,10 @@ import app from "app";
 import _ from 'lodash';
 
 //设置provider
-export function Provider(strOrFun:string | ng.IServiceProvider) {
+export function Provider(strOrFun) {
     if (_.isString(strOrFun)) {
-        return function (target:ng.IServiceProvider) {
-            app.provider(<string>strOrFun, target);
+        return function (target) {
+            app.provider(strOrFun, target);
         }
     } else if (_.isFunction(strOrFun)) {
         app.provider(strOrFun.name, strOrFun);
@@ -36,9 +36,9 @@ export function Route(option:RouteOption) {
 }
 
 //设置为controller
-export function Controller(strOrFunc:string | Function) {
+export function Controller(strOrFunc) {
     if (_.isString(strOrFunc)) {
-        return function (target:Function) {
+        return function (target) {
             app.controller(strOrFunc, target);
         }
     } else if (_.isFunction(strOrFunc)) {
