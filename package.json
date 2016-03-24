@@ -1,6 +1,6 @@
 {
   "name": "idsp-base-web-seed",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "idsp web project seed",
   "main": "index.js",
   "scripts": {
