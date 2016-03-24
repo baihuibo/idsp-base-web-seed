@@ -7,9 +7,16 @@
 <body>
 
 <div>
-    <h1>hello index</h1>
+    <h1>hello web seed</h1>
     <h6> 1 + 2 = {{1 + 2}}</h6>
-    <hello-word></hello-word>
+
+    <ul>
+        <li ng-repeat="menu in menus">
+            <a href="#{{menu.route}}">{{menu.name}} + {{menu.icon}}</a>
+        </li>
+    </ul>
+
+    <div ng-view style="border: 1px solid #000; min-height: 5em;"></div>
 </div>
 
 <script src="../node_modules/systemjs/dist/system.js"></script>

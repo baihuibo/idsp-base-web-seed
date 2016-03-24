@@ -4,13 +4,23 @@ import "./common/filters";
 import "./common/directives";
 import "./common/services";
 import "./views/all";
-import {BeforeRun} from 'annotation';
+import {BeforeRun, BeforeConfig} from 'annotation';
 import {uppercase} from "util";
+import config from 'config';
+
+@BeforeConfig
+class Config {
+    constructor($routeProvider) {
+        //设置默认访问页面
+        $routeProvider.otherwise('/manage');
+    }
+}
 
 @BeforeRun
 class Start {
     constructor($rootScope) {
-        var str = uppercase("HelloWord");
+        console.log('config', config);
+        var str:string = uppercase("HelloWord");
         console.log(str);
     }
 }

@@ -42,3 +42,26 @@ app.factory('RecursionHelper', function ($compile) {
         }
     };
 });
+
+app.config(($httpProvider, $resourceProvider)=> {
+    var defaults, headers, key, value;
+    defaults = $httpProvider.defaults;
+    headers = defaults.headers;
+    defaults.transformRequest = function (data) {
+        if (data === void 0) {
+            return data;
+        } else {
+            return $.param(angular.fromJson(angular.toJson(data)));
+        }
+    };
+    value = 'application/x-www-form-urlencoded; charset=UTF-8';
+    key = 'Content-Type';
+    headers.post[key] = value;
+    headers.put[key] = value;
+    headers.patch[key] = value;
+
+    var DefaultActions = $resourceProvider.defaults.actions;
+    DefaultActions['put'] = {method: 'PUT'};
+    DefaultActions['post'] = {method: 'POST'};
+    DefaultActions['update'] = {method: 'POST'};
+});

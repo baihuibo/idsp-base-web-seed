@@ -2,7 +2,9 @@
 import app from "app";
 
 app.directive("helloWord", function () {
-    return function (scope, el, attr) {
-        el.text('hello seed');
+    return {
+        link: function (scope, el, attr) {
+            el.text('hello seed');
+        }
     }
 });

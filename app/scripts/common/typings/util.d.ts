@@ -6,4 +6,11 @@ declare module "util" {
      * @param str
      */
     export function uppercase(str:string):string
+
+    /**
+     * 排序
+     * @param arr
+     * @param sortFn
+     */
+    export function sort<T>(arr:T[], sortFn:(a:T, b:T)=>number)
 }
