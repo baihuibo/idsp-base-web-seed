@@ -5,7 +5,7 @@ var async = require('async');
 
 var map = [
     {//复制接口描述
-        path: './typings/**/*.*',
+        path: './typings/**/*',
         to: '../../typings/',
         overwrite: true
     },
@@ -19,23 +19,28 @@ var map = [
         to: '../../app/scripts/',
         overwrite: false
     },
+    {//样例文件
+        path: './examples/**/*',
+        to: '../../examples/',
+        overwrite: true
+    },
     {//基础模块
-        path: './app/scripts/__base/**/*.*',
+        path: './app/scripts/__base/**/*',
         to: '../../app/scripts/__base/',
         overwrite: true
     },
     {//基础目录结构
-        path: './app/scripts/common/**/*.*',
+        path: './app/scripts/common/**/*',
         to: '../../app/scripts/common/',
         overwrite: false
     },
     {//基础视图模块
-        path: './app/scripts/views/**/*.*',
+        path: './app/scripts/views/**/*',
         to: '../../app/scripts/views/',
         overwrite: false
     },
     {//基础样式
-        path: './app/styles/__base/**/*.*',
+        path: './app/styles/__base/**/*',
         to: '../../app/styles/__base/',
         overwrite: true
     },
