@@ -1,8 +1,8 @@
 {
   "name": "idsp-base-web-seed",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "idsp web project seed",
-  "main": "index.js",
+  "main": "app/index.html",
   "scripts": {
     "postinstall": "node install.js"
   },
@@ -25,6 +25,7 @@
     "lodash": "^4.6.1",
     "moment": "^2.12.0",
     "plugin-typescript": "^4.0.1",
+    "remove": "^0.1.5",
     "systemjs": "^0.19.24",
     "systemjs-plugin-css": "^0.1.20",
     "systemjs-plugin-json": "^0.1.0",
