@@ -47,3 +47,8 @@ export function Controller(strOrFunc) {
         throw Error("@Controller 必须标注在 function or Class");
     }
 }
+
+
+export function Test() {
+
+}

@@ -1,3 +1,4 @@
 export default {
-    v: 1
+    name: 'adf',
+    ip: '192.180.0.0'
 }
