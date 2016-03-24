@@ -1,5 +1,5 @@
 //Created by baihuibo on 16/3/23.
-SystemJS.config({
+System.config({
     defaultJSExtensions: true,
     typescriptOptions: {
         module: 'es2015',

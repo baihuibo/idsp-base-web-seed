@@ -23,7 +23,7 @@
 <script src="../node_modules/systemjs/dist/system.js"></script>
 <script src="scripts/__base/system.config.js"></script>
 <script>
-    SystemJS.config({
+    System.config({
         //模块别名映射
         map: {
             app: 'scripts/common/app',
@@ -40,7 +40,7 @@
         paths: {}
     });
 
-    SystemJS.import('scripts/start');
+    System.import('scripts/start');
 </script>
 </body>
 </html>
