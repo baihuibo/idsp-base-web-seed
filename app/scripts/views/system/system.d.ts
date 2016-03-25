@@ -3,8 +3,8 @@
 namespace system {
 
     interface Rule {
-        age:number
-        name:string
+        id:number
+        ruleMaps:string
     }
 
     interface ICtrl {
