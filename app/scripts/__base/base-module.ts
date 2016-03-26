@@ -61,7 +61,7 @@ app.config(($httpProvider, $resourceProvider)=> {
     headers.patch[key] = value;
 
     var DefaultActions = $resourceProvider.defaults.actions;
+    DefaultActions['queryList'] = {method: 'GET', isArray: true};
     DefaultActions['put'] = {method: 'PUT'};
     DefaultActions['post'] = {method: 'POST'};
-    DefaultActions['update'] = {method: 'POST'};
 });

@@ -15,7 +15,7 @@ let route = "/manage";
 })
 @Menu({icon, name, route})
 @Controller
-class ManageCtrl implements manage.ICtrl {
+export class ManageCtrl implements manage.ICtrl {
     public users:User[];
     private sortFlag:boolean;
     public name:string;

@@ -2,6 +2,7 @@
 System.config({
     defaultJSExtensions: true,
     typescriptOptions: {
+        //http://www.typescriptlang.org/docs/handbook/compiler-options.html
         module: 'es2015',
         target: 'es6',
         //allowUnusedLabels: true,

@@ -16,7 +16,7 @@ let route = "/system";
 })
 @Menu({icon, name, route})
 @Controller
-class SystemCtrl implements system.ICtrl {
+export class SystemCtrl implements system.ICtrl {
 
     constructor(public $scope:IScope) {
 

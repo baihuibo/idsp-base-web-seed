@@ -3,7 +3,10 @@ import "./common/provider";
 import "./common/filters";
 import "./common/directives";
 import "./common/services";
+
+
 import "./views/all";
+
 import {BeforeRun, BeforeConfig} from 'annotation';
 import {uppercase} from "util";
 import config from 'config';
