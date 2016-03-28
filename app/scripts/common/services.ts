@@ -2,6 +2,10 @@
 
 import app from "app";
 
-app.factory('Server', function ($resource) {
-    return $resource('path/to/action.do');
+app.factory('Server', function (resource) {
+    return resource('path/to/action.do');
+});
+
+app.factory('TestServer', function (resource) {
+    return resource('test.do');
 });

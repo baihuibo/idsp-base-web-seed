@@ -65,3 +65,71 @@ app.config(($httpProvider, $resourceProvider)=> {
     DefaultActions['put'] = {method: 'PUT'};
     DefaultActions['post'] = {method: 'POST'};
 });
+
+angular.module('ngResource').factory('resource', function ($resource) {
+    var ref = ['get', 'query', 'queryList', 'delete', 'remove'];
+    return function resourceFactory(url, defaultParams, actions, options) {
+        var cls = $resource(url, defaultParams, actions, options);
+
+        function merge(m, d) {
+            if (angular.isString(m)) {
+                m = {[m]: true};
+            }
+            return angular.extend({}, m, d);
+        }
+
+        ref.forEach(function (name) {
+            if (cls[name]) {
+                var oldFn = cls[name];
+                cls[name] = function (a1, a2, a3, a4) {
+                    var params, data, success, error;
+                    if (!arguments.length) {
+                        return oldFn.call(cls);
+                    }
+                    switch (arguments.length) {
+                        case 4:
+                            error = a4;
+                            success = a3;
+                            break;
+                        case 3:
+                        case 2:
+                            if (angular.isFunction(a2)) {
+                                if (angular.isFunction(a1)) {
+                                    success = a1;
+                                    error = a2;
+                                    break;
+                                }
+                                success = a2;
+                                error = a3;
+                            } else {
+                                params = a1;
+                                data = a2;
+                                success = a3;
+                            }
+                            break;
+                        case 1:
+                            if (angular.isFunction(a1)) {
+                                success = a1
+                            } else {
+                                data = a1
+                            }
+                            break;
+                    }
+
+                    return oldFn.call(cls, merge(params, data), success, error);
+                };
+                cls.prototype['$' + name] = function (params, success, error) {
+                    if (angular.isFunction(params)) {
+                        error = success;
+                        success = params;
+                        params = {};
+                    }
+                    var result = cls[name].call(this, merge(params, this), success, error);
+                    return result.$promise || result;
+                }
+            }
+        });
+
+        return cls;
+    }
+});

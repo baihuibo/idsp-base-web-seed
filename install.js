@@ -3,7 +3,6 @@
 var copy = require('copy');
 var async = require('async');
 var fs = require('fs');
-var remove = require('remove');
 
 var first = [
     {//入口文件
@@ -82,14 +81,4 @@ async.eachSeries(list, function (item, next) {
     });
 }, function done() {
     console.log('copy file is done.');
-
-    removePaths.forEach(function (path) {
-        remove(path, function (err) {
-            if (err) {
-                console.error(err);
-            }
-        });
-    });
 });
-
-var removePaths = ['./typings', './app', './examples'];

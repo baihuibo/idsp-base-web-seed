@@ -4,8 +4,7 @@ import "./common/filters";
 import "./common/directives";
 import "./common/services";
 
-
-import "./views/all";
+import "./views/all";//全部页面
 
 import {BeforeRun, BeforeConfig} from 'annotation';
 import {uppercase} from "util";
