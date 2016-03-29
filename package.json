@@ -4,7 +4,7 @@
   "description": "idsp web project seed",
   "main": "app/index.html",
   "scripts": {
-    "postinstall": "node install.js"
+    "postinstall": "node install.js "
   },
   "repository": {
     "type": "git",
