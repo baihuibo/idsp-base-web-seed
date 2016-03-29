@@ -1,6 +1,6 @@
 // Created by baihuibo on 16/3/29.
 import app from "app";
-import {MenuItem} from "../typings/entity/MenuItem";
+import {MenuItem} from "./typings/MenuItem";
 
 app.provider("menu", class menu {
     private menus:MenuItem[] = [];

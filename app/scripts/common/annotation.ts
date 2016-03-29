@@ -1,5 +1,5 @@
 // Created by baihuibo on 16/3/29.
-import {MenuItem} from "../typings/entity/MenuItem";
+import {MenuItem} from "../__base/typings/MenuItem";
 export * from "../__base/annotation";
 
 /**------------ 自定义注解 --------- */

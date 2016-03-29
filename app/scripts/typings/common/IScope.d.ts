@@ -1,5 +1,5 @@
 // Created by baihuibo on 16/3/29.
-import {MenuItem} from "../entity/MenuItem";
+import {MenuItem} from "../../__base/typings/MenuItem";
 /**
  * 全局Scope
  * @prop {string} pageTitle 页面标题

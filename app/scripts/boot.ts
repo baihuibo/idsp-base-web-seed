@@ -1,9 +1,12 @@
-import './views/all';
+import "./common/directives";
+import "./common/filters";
+import "./common/servers";
 
-import {uppercase} from "util";
-import {BeforeRun} from "annotation";
+import {uppercase} from "./common/util";
+import {BeforeRun} from "./common/annotation";
 import {IScope} from "./typings/common/IScope";
-import {MenuItem} from "./typings/entity/MenuItem";
+import {MenuItem} from "./__base/typings/MenuItem";
+import './views/all';
 
 @BeforeRun
 class Global {
