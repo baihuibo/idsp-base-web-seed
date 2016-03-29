@@ -1,5 +1,5 @@
 .idea
 test
 node_modules
-*.js
-*.map
+/app/**/*.js
+/app/**/*.map
