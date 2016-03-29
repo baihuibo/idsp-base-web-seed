@@ -3,6 +3,7 @@
 var copy = require('copy');
 var async = require('async');
 var fs = require('fs');
+var remove = require('remove');
 
 var first = [
     {//入口文件
@@ -18,6 +19,11 @@ var first = [
     {//基础目录结构
         path: './app/scripts/common/**/*.*',
         to: '../../app/scripts/common/',
+        overwrite: false
+    },
+    {//typings
+        path: './app/scripts/typings/**/*.*',
+        to: '../../app/scripts/typings/',
         overwrite: false
     },
     {//基础视图模块
@@ -36,6 +42,10 @@ var update = [
     {//复制接口描述
         path: './typings/**/*.*',
         to: '../../typings/',
+        overwrite: true
+    }, {//tsconfig.json
+        path: './tsconfig.json',
+        to: '../../',
         overwrite: true
     },
 
@@ -81,4 +91,13 @@ async.eachSeries(list, function (item, next) {
     });
 }, function done() {
     console.log('copy file is done.');
+    var removePaths = ['./typings', './app', './examples'];
+
+    removePaths.forEach(function (path) {
+        remove(path, function (err) {
+            if (err) {
+                console.error(err);
+            }
+        });
+    });
 });
