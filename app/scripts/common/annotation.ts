@@ -1,15 +1,13 @@
-// Created by baihuibo on 16/3/22.
-import app from "app";
-
-//将基础注解全部导出
-export * from '../__base/annotation';
+// Created by baihuibo on 16/3/29.
+import {MenuItem} from "../typings/entity/MenuItem";
+export * from "../__base/annotation";
 
 /**------------ 自定义注解 --------- */
+import "../__base/menu";
+import app from "app";
 
 export function Menu(menuItem:MenuItem) {
     app.config(function (menuProvider) {
         menuProvider.register(menuItem);
     });
 }
-
-

@@ -1,13 +1,13 @@
 //Created by baihuibo on 16/1/26.
-
 //global module
 import "angular-resource";
 import "angular-route";
+import _ from "lodash";
 
-export var app = angular.module('base-module', ['ngResource', 'ngRoute']);
+export var baseModule = angular.module('base-module', ['ngResource', 'ngRoute']);
 
 //虚拟dom元素,递归优化
-app.factory('RecursionHelper', function ($compile) {
+baseModule.factory('RecursionHelper', function ($compile) {
     return ()=> {
         return (element, link) => {
             // Normalize the link parameter
@@ -23,7 +23,8 @@ app.factory('RecursionHelper', function ($compile) {
                 /**
                  * Compiles and re-adds the contents
                  */
-                post: (scope, element) => {
+                post: (...args) => {
+                    var [scope, element] = args;
                     // Compile the contents
                     if (!compiledContents) {
                         compiledContents = $compile(contents);
@@ -35,7 +36,7 @@ app.factory('RecursionHelper', function ($compile) {
 
                     // Call the post-linking function, if any
                     if (link && link.post) {
-                        link.post.apply(null, arguments);
+                        link.post(...args);
                     }
                 }
             };
@@ -43,7 +44,7 @@ app.factory('RecursionHelper', function ($compile) {
     };
 });
 
-app.config(($httpProvider, $resourceProvider)=> {
+baseModule.config(($httpProvider, $resourceProvider)=> {
     var defaults, headers, key, value;
     defaults = $httpProvider.defaults;
     headers = defaults.headers;

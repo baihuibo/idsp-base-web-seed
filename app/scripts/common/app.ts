@@ -1,6 +1,5 @@
-//Created by baihuibo on 16/1/26.
-import "../__base/base-module";
+import "../__base/base-module"
 
-var app = angular.module('app', ['base-module']);
+import config from "../config";
 
-export default app;
+export default angular.module("app", ['base-module']);

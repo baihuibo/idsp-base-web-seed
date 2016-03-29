@@ -1,4 +1,4 @@
+// Created by baihuibo on 16/3/29.
 export default {
-    name: 'adf',
-    ip: '192.180.0.0'
+    id: 1
 }

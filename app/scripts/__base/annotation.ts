@@ -1,17 +1,8 @@
 // Created by baihuibo on 16/3/22.
 import app from "app";
-import _ from 'lodash';
+import _ from "lodash";
 
-//设置provider
-export function Provider(strOrFun) {
-    if (_.isString(strOrFun)) {
-        return function (target) {
-            app.provider(strOrFun, target);
-        }
-    } else if (_.isFunction(strOrFun)) {
-        app.provider(strOrFun.name, strOrFun);
-    }
-}
+import {RouteOption} from "./typings/RouteOption"
 
 //运行
 export function BeforeRun(target) {

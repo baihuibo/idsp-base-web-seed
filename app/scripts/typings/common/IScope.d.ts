@@ -1,5 +1,5 @@
-// Created by baihuibo on 16/3/23.
-
+// Created by baihuibo on 16/3/29.
+import {MenuItem} from "../entity/MenuItem";
 /**
  * 全局Scope
  * @prop {string} pageTitle 页面标题

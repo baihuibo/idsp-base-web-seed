@@ -3,8 +3,8 @@ declare module 'annotation' {
 
     /**
      * 配置到系统菜单
-     * @param menu
+     * @param {MenuItem} menu
      * @constructor
      */
-    function Menu(menu:MenuItem);
+    function Menu(menu);
 }

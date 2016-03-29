@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>initialize</title>
+    <title>IDSP Web demo QuickStart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+<!-- 3. Display the application -->
 <body>
+
 
 <div>
     <h1>hello web seed</h1>
@@ -20,26 +21,35 @@
     <div ng-view style="border: 1px solid #000; min-height: 5em;"></div>
 </div>
 
+<!-- 1. Load libraries -->
 <script src="../node_modules/systemjs/dist/system.js"></script>
-<script src="scripts/__base/system.config.js"></script>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/angular/angular.min.js"></script>
+<!-- 2. Configure SystemJS -->
 <script>
     System.config({
-        //模块别名映射
+        defaultJSExtensions: true,
+
+        //lib defined
         map: {
-            app: 'scripts/common/app',
-            annotation: 'scripts/common/annotation',
-            util: 'scripts/common/util',
-            config: 'scripts/config'
+            'lodash': 'node/lodash/lodash.min',
+            'moment': 'node/moment/moment',
+            'angular-resource': 'node/angular-resource/angular-resource.min',
+            'angular-route': 'node/angular-route/angular-route.min'
         },
-
-        //模块加载描述
-        meta: {},
-
-        //路径别名
-        //目前已有 node/  指向 ../node_modules/
-        paths: {}
+        paths: {
+            'node/': '../node_modules/'
+        },
+        packages: {
+            scripts: {
+                map: {
+                    annotation: "scripts/common/annotation",
+                    app: "scripts/common/app",
+                    util: 'scripts/common/util'
+                }
+            }
+        }
     });
-
     System.import('scripts/boot');
 </script>
 </body>

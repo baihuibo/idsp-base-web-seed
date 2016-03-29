@@ -2,7 +2,9 @@
 
 import {Controller, Menu, Route} from "annotation";
 import {sort} from "util";
-import User = manage.User;
+import {IScope} from "../../typings/common/IScope";
+import {User} from "../../typings/entity/page/User";
+import {IPageCtrl} from "../../typings/interface/IPageCtrl";
 
 let name = "页面1";
 let icon = "icon";
@@ -11,11 +13,11 @@ let route = "/manage";
 @Route({
     route: route,
     controllerAs: "T",
-    templateUrl: "scripts/views/manage/manage.html"
+    templateUrl: "scripts/views/page/page.html"
 })
 @Menu({icon, name, route})
 @Controller
-export class ManageCtrl implements manage.ICtrl {
+export class PageCtrl implements IPageCtrl {
     public users:User[];
     private sortFlag:boolean;
     public name:string;
@@ -26,8 +28,6 @@ export class ManageCtrl implements manage.ICtrl {
     }
 
     order() {
-        console.log('order');
-
         sort(this.users, (a, b) => {
             if (this.sortFlag) {
                 return a.age - b.age;

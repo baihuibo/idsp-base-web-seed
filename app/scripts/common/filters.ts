@@ -1,9 +1,8 @@
-//Created by baihuibo on 16/1/26.
+// Created by baihuibo on 16/3/29.
+import app from "./app";
 
-import app from "app";
-
-app.filter('test', function () {
+app.filter('testFilter', function () {
     return function (input) {
-        return "test" + input;
+        return 'output_' + input
     }
 });

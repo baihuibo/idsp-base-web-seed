@@ -1,4 +1,3 @@
-// Created by baihuibo on 16/3/22.
-import './global/global';
-import "./manage/manage";
-import "./system/system";
+// Created by baihuibo on 16/3/29.
+
+export * from "./page/PageCtrl";

@@ -1,8 +1,8 @@
-// Created by baihuibo on 16/3/23.
-import {Provider} from 'annotation';
+// Created by baihuibo on 16/3/29.
+import app from "app";
+import {MenuItem} from "../typings/entity/MenuItem";
 
-@Provider
-class menu {
+app.provider("menu", class menu {
     private menus:MenuItem[] = [];
 
     register(menu:MenuItem) {
@@ -12,4 +12,4 @@ class menu {
     $get():MenuItem[] {//提供给angular调用的方法,用来返回值
         return this.menus;
     }
-}
+});
