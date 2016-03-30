@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>IDSP Web demo QuickStart</title>
@@ -10,6 +11,19 @@
 <div>
     <h1>hello web seed</h1>
     <h6> 1 + 2 = {{1 + 2}}</h6>
+
+    <div class="layout layout-row">
+        <div style="border: 1px solid red;">
+            1
+        </div><div style="border: 1px solid red;">
+            1
+        </div><div style="border: 1px solid red;">
+            1
+        </div>
+        <div>
+            2
+        </div>
+    </div>
 
     <ul>
         <li ng-repeat="menu in menus">
@@ -26,6 +40,8 @@
 <script src="../node_modules/angular/angular.js"></script>
 <!-- 2. Configure SystemJS -->
 <script>
+    System.set('jquery', System.newModule({default: jQuery}));
+    System.set('angular', System.newModule({default: angular}));
     System.config({
         defaultJSExtensions: true,
 
@@ -36,9 +52,10 @@
             'angular-resource': 'node/angular-resource/angular-resource.min',
             'angular-route': 'node/angular-route/angular-route.min',
 
-            css : 'node/systemjs-plugin-cs/css',
-            json : 'node/systemjs-plugin-json/json'
+            css: 'node/systemjs-plugin-cs/css',
+            json: 'node/systemjs-plugin-json/json'
         },
+        meta: {},
         paths: {
             'node/': '../node_modules/'
         },

@@ -14,8 +14,10 @@ let route = "/manage2";
 })
 @Menu({icon, name, route})
 @Controller
-export class Page2Ctrl{
-    constructor(public $scope:IScope) {
+export class Page2Ctrl {
+    public name:string;
 
+    constructor(public $scope:IScope) {
+        this.name = 'page2';
     }
 }

@@ -1,58 +1,33 @@
 @name: plugin;
 
-@width:60px;
-@float: left;
 .@{name}-paging {
-  margin:10px auto;
-  font-size: 12px;
-  overflow: hidden;
-  .@{name}-data {
-    float: @float;
-    line-height: 28px;
+  margin: 10px auto;
+  * {
+    font-size: 12px;
   }
-  .@{name}-list {
-    float:right;
-    ul{
-      padding:0;
+  .plugin-paging-content {
+    > span {
+      border: 1px solid #ddd;
+      border-left-width: 0;
+      line-height: 12px;
+      padding: .6em .8em;
+      cursor: pointer;
+      color: #636363;
+      &:first-child {
+        border-left-width: 1px;
+      }
+      &:hover, &.active {
+        background-color: #eaeaea;
+        color: #000;
+      }
+    }
+    select {
       margin: 0;
+      outline: none;
+      border: 1px solid #ddd;
+      border-left-width: 0;
+      border-radius: 0;
+      background: none;
     }
-    li {
-      list-style: none;
-      float: @float;
-      width:@width;
-      height:28px;
-      line-height:28px;
-      text-align: center;
-      border-left: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-      border-top: 1px solid #ddd;
-      a{
-        text-decoration: none;
-        color: #777;
-      }
-      &.@{name}-alone{
-        width: 28px;
-        a:hover{
-          display: block;
-          height:30px;
-          background:#428bca;
-          border:none;
-          color: #fff;
-        }
-        a:active{
-          color: #23528d;
-        }
-      }
-    }
-    .@{name}-select{
-      border:none;
-      select{
-        width:@width;
-        height:30px;
-      }
-    }
-  }
-  .@{name}-alone{
-    width:@width;
   }
 }
