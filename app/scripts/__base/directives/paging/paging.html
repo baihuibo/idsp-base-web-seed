@@ -1,40 +1,38 @@
-<div class="row">
-    <div class="col-sm-12 col-md-12" ng-if="!option.resultList.length">
+<div class="plugin-paging">
+    <div ng-if="!option.resultList.length">
         <div class="alert"><strong>无数据可以显示,</strong>请更换查询条件!</div>
     </div>
     <div ng-if="option.total && option.resultList.length">
-        <div class="col-sm-5 col-md-5">
-            <div class="dataTables_info" ng-if="!option.hideDesc">
+        <div class="plugin-data">
+            <div ng-if="!option.hideDesc">
                 当前显示 {{getDataRange()}}
                 到 {{getDataRange(true)}}
                 ，总共 {{option.total || 0}} 条数据
             </div>
         </div>
-        <div class="col-sm-7 col-md-7">
-            <div class="dataTables_paginate">
-                <ul class="pagination pagination-sm">
-                    <li class="prev" ng-class="{disabled:option.currentPage == 0}">
+            <div class="plugin-list">
+                <ul>
+                    <li ng-class="{disabled:option.currentPage == 0}">
                         <a href="javascript:" ng-click="goToPage(0)">首页</a>
                     </li>
-                    <li class="prev" ng-class="{disabled:option.currentPage == 0}">
+                    <li ng-class="{disabled:option.currentPage == 0}">
                         <a href="javascript:" ng-click="goToPage(option.currentPage-1)">上一页</a>
                     </li>
-                    <li ng-class="{active:item == option.currentPage}" ng-repeat="item in pageList">
+                    <li class="plugin-alone" ng-class="{active:item == option.currentPage}" ng-repeat="item in pageList">
                         <a href="javascript:" ng-click="goToPage(item)">{{item + 1}}</a>
                     </li>
-                    <li class="next" ng-class="{disabled:option.currentPage == option.totalPage - 1}">
+                    <li ng-class="{disabled:option.currentPage == option.totalPage - 1}">
                         <a href="javascript:" ng-click="goToPage(option.currentPage+1)">下一页</a>
                     </li>
-                    <li class="next last" ng-class="{disabled:option.currentPage == option.totalPage - 1}">
+                    <li ng-class="{disabled:option.currentPage == option.totalPage - 1}">
                         <a href="javascript:" ng-click="goToPage(option.totalPage-1)">尾页</a>
                     </li>
-                    <li class="next">
-                        <select class="form-control input-sm paging-select"
+                    <li class="plugin-select">
+                        <select
                                 ng-model="option.limit"
                                 ng-options="item for item in option.limitList"></select>
                     </li>
                 </ul>
             </div>
-        </div>
     </div>
 </div>

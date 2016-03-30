@@ -1,3 +1,54 @@
-.paging{
-  display: block;
+@name: plugin;
+
+@width:60px;
+@float: left;
+.@{name}-paging {
+  width: 1000px;
+  margin:10px auto 0 auto;
+  font-size: 12px;
+  overflow: hidden;
+  .@{name}-data {
+    float: @float;
+    line-height: 28px;
+  }
+  .@{name}-list {
+    float:right;
+    li {
+      list-style: none;
+      float: @float;
+      width:@width;
+      height:28px;
+      line-height:28px;
+      text-align: center;
+      border: 1px solid #ddd;
+      a{
+        text-decoration: none;
+        color: #777;
+      }
+      &.@{name}-alone{
+        width: 28px;
+        a:hover{
+          display: block;
+          width:30px;
+          height:30px;
+          background:#428bca;
+          border:none;
+          color: #fff;
+        }
+        a:active{
+          color: #23528d;
+        }
+      }
+    }
+    .@{name}-select{
+      border:none;
+      select{
+        width:@width;
+        height:30px;
+      }
+    }
+  }
+  .@{name}-alone{
+    width:@width;
+  }
 }
