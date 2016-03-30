@@ -115,10 +115,6 @@ angular.module('ngResource').factory('resource', function ($resource) {
                             }
                             break;
                     }
-                    console.log(arguments);
-
-                    console.log('params', params);
-                    console.log('data', data);
 
                     return oldFn.call(this, merge(params, data), success, error);
                 };

@@ -27,8 +27,6 @@ export class PageCtrl implements IPageCtrl {
         this.users = this.queryUser();
         this.name = "hello ctrl";
         this.paging.resource = TestPaging;
-        
-        this.paging
     }
 
     order() {

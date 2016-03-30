@@ -23,9 +23,8 @@ System.register(["annotation"], function(exports_1, context_1) {
             icon = "icon";
             route = "/manage2";
             Page2Ctrl = (function () {
-                function Page2Ctrl($scope, menu) {
+                function Page2Ctrl($scope) {
                     this.$scope = $scope;
-                    this.menu = menu;
                 }
                 Page2Ctrl = __decorate([
                     annotation_1.Route({
@@ -35,7 +34,7 @@ System.register(["annotation"], function(exports_1, context_1) {
                     }),
                     annotation_1.Menu({ icon: icon, name: name, route: route }),
                     annotation_1.Controller, 
-                    __metadata('design:paramtypes', [Object, Object])
+                    __metadata('design:paramtypes', [Object])
                 ], Page2Ctrl);
                 return Page2Ctrl;
             }());

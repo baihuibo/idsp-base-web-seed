@@ -54,6 +54,12 @@ var update = [
         to: '../../examples/',
         overwrite: true
     },
+
+    {//data
+        path: './app/data/*.*',
+        to: '../../app/data/',
+        overwrite: false
+    },
     {//基础模块
         path: './app/scripts/__base/**/*.*',
         to: '../../app/scripts/__base/',
