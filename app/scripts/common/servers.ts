@@ -4,3 +4,7 @@ import app from "./app";
 app.factory("Test", function () {
     return {};
 });
+
+app.factory("TestPaging", function (resource) {
+    return resource('data/paging.json');
+});

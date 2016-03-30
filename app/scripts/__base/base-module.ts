@@ -85,13 +85,12 @@ angular.module('ngResource').factory('resource', function ($resource) {
                 cls[name] = function (a1, a2, a3, a4) {
                     var params, data, success, error;
                     if (!arguments.length) {
-                        return oldFn.call(cls);
+                        return oldFn.call(this);
                     }
                     switch (arguments.length) {
                         case 4:
                             error = a4;
                             success = a3;
-                            break;
                         case 3:
                         case 2:
                             if (angular.isFunction(a2)) {
@@ -116,18 +115,13 @@ angular.module('ngResource').factory('resource', function ($resource) {
                             }
                             break;
                     }
+                    console.log(arguments);
 
-                    return oldFn.call(cls, merge(params, data), success, error);
+                    console.log('params', params);
+                    console.log('data', data);
+
+                    return oldFn.call(this, merge(params, data), success, error);
                 };
-                cls.prototype['$' + name] = function (params, success, error) {
-                    if (angular.isFunction(params)) {
-                        error = success;
-                        success = params;
-                        params = {};
-                    }
-                    var result = cls[name].call(this, merge(params, this), success, error);
-                    return result.$promise || result;
-                }
             }
         });
 

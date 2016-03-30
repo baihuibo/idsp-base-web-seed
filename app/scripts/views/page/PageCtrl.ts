@@ -21,10 +21,14 @@ export class PageCtrl implements IPageCtrl {
     public users:User[];
     private sortFlag:boolean;
     public name:string;
+    public paging:PagingOption = {};
 
-    constructor(public $scope:IScope, public menu) {
+    constructor(public $scope:IScope, public menu, TestPaging) {
         this.users = this.queryUser();
         this.name = "hello ctrl";
+        this.paging.resource = TestPaging;
+        
+        this.paging
     }
 
     order() {

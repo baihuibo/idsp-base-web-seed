@@ -33,4 +33,11 @@ declare module "annotation" {
      * @constructor
      */
     function BeforeConfig(target?:Function)
+
+    /**
+     * 配置到系统菜单
+     * @param {MenuItem} menu
+     * @constructor
+     */
+    function Menu(menu);
 }

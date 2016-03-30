@@ -3,6 +3,7 @@ import app from "app";
 import _ from "lodash";
 
 import {RouteOption} from "./typings/RouteOption"
+import {MenuItem} from "./typings/MenuItem";
 
 //运行
 export function BeforeRun(target) {
@@ -37,4 +38,10 @@ export function Controller(strOrFunc) {
     } else {
         throw Error("@Controller 必须标注在 function or Class");
     }
+}
+
+export function Menu(menuItem:MenuItem) {
+    app.config(function (menuProvider) {
+        menuProvider.register(menuItem);
+    });
 }
