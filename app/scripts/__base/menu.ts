@@ -13,3 +13,7 @@ app.provider("menu", class menu {
         return this.menus;
     }
 });
+
+app.factory("MenuServer", function (resource) {
+    return resource('data/menu.json');
+});

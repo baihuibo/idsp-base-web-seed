@@ -25,6 +25,7 @@ System.register(["annotation"], function(exports_1, context_1) {
             Page2Ctrl = (function () {
                 function Page2Ctrl($scope) {
                     this.$scope = $scope;
+                    this.name = 'page2';
                 }
                 Page2Ctrl = __decorate([
                     annotation_1.Route({

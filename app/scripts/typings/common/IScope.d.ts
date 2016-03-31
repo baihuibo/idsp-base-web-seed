@@ -12,7 +12,7 @@ interface IScope extends ng.IRootScopeService {
     pageTitle:string;
 
     //菜单列表
-    menus:MenuItem[]
+    menus:any
 
     //当前页面是否激活
     isActive(route:string):boolean;

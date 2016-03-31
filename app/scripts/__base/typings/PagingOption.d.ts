@@ -31,12 +31,12 @@ interface PagingOption {
      *             如果传 last 则跳转到尾页
      * @param reload 是否重新计算总页数
      */
-    goToPage?:(page?, reload?)=>any
+    goToPage?:(page?, reload?:boolean)=>any
     /**
      * 刷新当前页面
-     * @param reload 是否重计算
+     * @param reNum 是否重计算
      */
-    reload?:(reload?)=>any
+    reload?:(reNum?:boolean)=>any
     pagingSize?:number
     params?:any
     invokeParam?:any
