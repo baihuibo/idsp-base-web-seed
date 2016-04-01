@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>IDSP Web demo QuickStart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/__base/flex-layout.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <!-- 3. Display the application -->
@@ -12,16 +14,21 @@
     <h1>hello web seed</h1>
     <h6> 1 + 2 = {{1 + 2}}</h6>
 
-    <div class="layout layout-row">
-        <div style="border: 1px solid red;">
-            1
-        </div><div style="border: 1px solid red;">
-            1
-        </div><div style="border: 1px solid red;">
-            1
+    <div layout="row" layout-sm="column"
+         style="border: 1px solid black;">
+        <div  style="border: 1px solid red;">
+            <p>1asdfadflj</p>
+            <p>1asdfadflj</p>
         </div>
-        <div>
-            2
+        <span flex layout="column">
+            <a>a</a>
+            <a>b</a>
+            <a>c</a>
+            <a>d</a>
+        </span>
+        <div style="border: 1px solid red;">
+            <p>1asdfadflj</p>
+            <p>1asdfadflj</p>
         </div>
     </div>
 
