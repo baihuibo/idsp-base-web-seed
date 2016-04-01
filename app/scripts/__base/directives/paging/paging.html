@@ -2,15 +2,15 @@
     <div ng-if="!option.resultList.length">
         <strong>无数据可以显示,</strong>请更换查询条件!
     </div>
-    <div class="layout layout-row" ng-if="option.total && option.resultList.length">
-        <div class="flex layout layout-row layout-align-start-center">
+    <div layout="row" ng-if="option.total && option.resultList.length">
+        <div flex layout="row" layout-align="start center">
             <div ng-if="!option.hideDesc">
                 当前显示 {{getDataRange()}}
                 到 {{getDataRange(true)}}
                 ，总共 {{option.total || 0}} 条数据
             </div>
         </div>
-        <div class="layout layout-row plugin-paging-content">
+        <div layout="row" class="plugin-paging-content">
             <span ng-class="{disabled:option.currentPage == 0}"
                   ng-click="goToPage(0)">首页</span>
 
