@@ -1,3 +1,7 @@
+# v0.0.43
+- 修改
+    1. `index.html` 中新增 `<meta charset="UTF-8">` 解决中文乱码问题
+
 # v0.0.42
 - 修改
     1. `app/scripts/typings/common/IScope.d.ts` 添加导出关键字
