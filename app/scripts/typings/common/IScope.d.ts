@@ -7,7 +7,7 @@ import {MenuItem} from "../../__base/typings/MenuItem";
  * @prop {function} isActive 判断页面是否激活
  * @prop {function} setTitle 设置页面标题
  */
-interface IScope extends ng.IRootScopeService {
+export interface IScope extends ng.IRootScopeService {
     //标题
     pageTitle:string;
 

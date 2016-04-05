@@ -1,3 +1,5 @@
-
+# v0.0.42
+- 修改
+    1. `app/scripts/typings/common/IScope.d.ts` 添加导出关键字
 
 ## 修改说明
