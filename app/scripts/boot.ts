@@ -8,35 +8,9 @@ import './views/all';
 
 @BeforeRun
 class Run {
-    constructor($rootScope:IScope, $route, MenuServer) {
+    constructor($rootScope:IScope, menu) {
         //菜单注入
-        $rootScope.menus = MenuServer.query();
-        $rootScope.menus.$promise.then(function (list) {
-
-            angular.forEach($route.routes, function (option, route) {
-                if (!query(list, route)) {
-                    delete $route.routes[route];
-                }
-            });
-
-            function query(list, route) {
-                for (var i = 0; i < list.length; i++) {
-                    var item = list[i];
-                    var path = item.route;
-                    if (path) {
-                        var path2 = (path[path.length - 1] == '/') ? path.substr(0, path.length - 1) : path + '/';
-                        if (path === route || path2 === route) {
-                            return item;
-                        }
-                    }
-
-                    if (item.childs) {
-                        return query(item.childs, route);
-                    }
-                }
-                return null;
-            }
-        });
+        $rootScope.menus = menu;
 
         //设置标题
         $rootScope.setTitle = (title:string) => {
@@ -49,7 +23,7 @@ class Run {
 
         var activeRoute:string = '';
         $rootScope.$on('$routeChangeSuccess', (e, current:any) => {
-            if (current.$$route) {
+            if (current && current.$$route) {
                 activeRoute = current.$$route.originalPath;
             }
         });

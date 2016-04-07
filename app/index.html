@@ -35,7 +35,7 @@
 
     <ul>
         <li ng-repeat="menu in menus">
-            <a href="#{{menu.route}}">{{menu.name}} + {{menu.icon}}</a>
+            <a href="#{{menu.route}}">{{menu.name}} + {{menu}}</a>
         </li>
     </ul>
 
@@ -46,6 +46,7 @@
 <script src="../node_modules/systemjs/dist/system.js"></script>
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/js-yaml/dist/js-yaml.min.js"></script>
 <!-- 2. Configure SystemJS -->
 <script>
     System.set('jquery', System.newModule({default: jQuery}));

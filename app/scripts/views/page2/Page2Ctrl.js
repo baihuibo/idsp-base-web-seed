@@ -12,16 +12,13 @@ System.register(["annotation"], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var annotation_1;
-    var name, icon, route, Page2Ctrl;
+    var Page2Ctrl;
     return {
         setters:[
             function (annotation_1_1) {
                 annotation_1 = annotation_1_1;
             }],
         execute: function() {
-            name = "页面2";
-            icon = "icon";
-            route = "/manage2";
             Page2Ctrl = (function () {
                 function Page2Ctrl($scope) {
                     this.$scope = $scope;
@@ -29,11 +26,10 @@ System.register(["annotation"], function(exports_1, context_1) {
                 }
                 Page2Ctrl = __decorate([
                     annotation_1.Route({
-                        route: route,
+                        route: "/page2",
                         controllerAs: "T",
                         templateUrl: "scripts/views/page2/page.html"
                     }),
-                    annotation_1.Menu({ icon: icon, name: name, route: route }),
                     annotation_1.Controller, 
                     __metadata('design:paramtypes', [Object])
                 ], Page2Ctrl);

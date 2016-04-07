@@ -1,0 +1,12 @@
+menus :
+  - route : /page
+    name : 菜单1
+    childs :
+      - route : /page
+        name : page
+
+      - route : /page2
+        name : page2
+
+  - route : /page2
+    name : 菜单2

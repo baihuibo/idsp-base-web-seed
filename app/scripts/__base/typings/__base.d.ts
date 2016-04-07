@@ -35,9 +35,11 @@ declare module "annotation" {
     function BeforeConfig(target?:Function)
 
     /**
-     * 配置到系统菜单
+     * 配置到系统菜单,已弃用,未来版本将删除此方法
      * @param {MenuItem} menu
      * @constructor
      */
     function Menu(menu);
 }
+
+declare var jsyaml;

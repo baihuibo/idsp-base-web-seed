@@ -1,21 +1,16 @@
 // Created by baihuibo on 16/3/24.
 
-import {Controller, Menu, Route} from "annotation";
+import {Controller, Route} from "annotation";
 import {sort} from "util";
 import {IScope} from "../../typings/common/IScope";
 import {User} from "../../typings/entity/page/User";
 import {IPageCtrl} from "../../typings/interface/IPageCtrl";
 
-let name = "页面1";
-let icon = "icon";
-let route = "/manage";
-
 @Route({
-    route: route,
+    route: "/page",
     controllerAs: "T",
     templateUrl: "scripts/views/page/page.html"
 })
-@Menu({icon, name, route})
 @Controller
 export class PageCtrl implements IPageCtrl {
     public users:User[];
