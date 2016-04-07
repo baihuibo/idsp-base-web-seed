@@ -17,6 +17,11 @@ import _ from "lodash";
  *      public option:PagingOption = {};//分页配置
  *      constructor(public TestResource) {
  *          this.option.resource = TestResource;//赋值给分页配置
+ *          this.option.format = (list:Interface[])=>{
+ *              list.forEach(function(item){
+ *                  item.attr = Number(item.attr);
+ *              });
+ *          };
  *      }
  *   }
  *
@@ -36,7 +41,7 @@ app.directive("remotePaging", function () {
         limit:number
         data:any[]
     }
-    
+
     var defaults = {
         method: 'get',
         limit: 10,
@@ -97,7 +102,10 @@ app.directive("remotePaging", function () {
                         option.resultList = _.map(result.data || [], function (item) {
                             return new option.resource(item);
                         });
-                        initPageList(option.totalPage , option.currentPage);
+                        if (_.isFunction(option.format)) {
+                            option.format(option.resultList);
+                        }
+                        initPageList(option.totalPage, option.currentPage);
                         loading = false;
                     }, function () {
                         loading = false;
@@ -142,7 +150,7 @@ app.directive("remotePaging", function () {
 
             var startFix, endFix, list = [];
 
-            function initPageList(totalPage , currentPage) {//初始化分页器
+            function initPageList(totalPage, currentPage) {//初始化分页器
                 list = scope.pageList = [];
 
                 startFix = endFix = Math.floor(pagingSize / 2);

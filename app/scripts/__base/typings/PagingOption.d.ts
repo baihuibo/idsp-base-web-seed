@@ -6,6 +6,7 @@
  * @prop limit 每页显示多少条,默认10
  * @prop limitList 限制显示数据条数的列表(在select内选择即可生效),默认[10,20,30,40,50]
  * @prop resultList 当前数据
+ * @prop format 格式化数据
  * @prop goToPage 前往多少页
  * @prop reload 刷新当前页
  * @prop pagingSize 分页器显示数量,默认5
@@ -23,6 +24,7 @@ interface PagingOption {
     limit?:number
     limitList?:number[]
     resultList?:any[]
+    format?:(list:any[])=>any
 
     /**
      * 跳转到那页
