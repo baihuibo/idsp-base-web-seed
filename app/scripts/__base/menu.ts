@@ -32,7 +32,7 @@ app.provider("menu", class menu {
     }
 
     _format(list, routes) {
-        angular.forEach(routes, (route , option) => {
+        angular.forEach(routes, (option, route) => {
             if (!this._query(list, route)) {
                 delete routes[route];
             }
@@ -48,8 +48,14 @@ app.provider("menu", class menu {
                 res.menus.forEach((item) => {
                     ret.push(item);
                 });
-                this._format(res, $route.routes);
             }
+            var other = [];
+            if (res.others) {
+                res.others.forEach((item) => {
+                    other.push(item);
+                });
+            }
+            this._format([].concat(other, ret), $route.routes);
         });
         return ret;
     }

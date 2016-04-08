@@ -6,6 +6,14 @@ var fs = require('fs');
 var remove = require('remove');
 
 var first = [
+    {//基础视图模块
+        path: './app/scripts/views/**/*.*',
+        to: '../../app/scripts/views/',
+        overwrite: false
+    }
+];
+
+var update = [
     {//入口文件
         path: './app/*.*',
         to: '../../app/',
@@ -26,19 +34,11 @@ var first = [
         to: '../../app/scripts/typings/',
         overwrite: false
     },
-    {//基础视图模块
-        path: './app/scripts/views/**/*.*',
-        to: '../../app/scripts/views/',
-        overwrite: false
-    },
     {//基础样式
         path: './app/styles/*.*',
         to: '../../app/styles/',
         overwrite: false
-    }
-];
-
-var update = [
+    },
     {//复制接口描述
         path: './typings/**/*.*',
         to: '../../typings/',
