@@ -6,22 +6,9 @@ var fs = require('fs');
 var remove = require('remove');
 
 var first = [
-    {//基础视图模块
-        path: './app/scripts/views/**/*.*',
-        to: '../../app/scripts/views/',
-        overwrite: false
-    }
-];
-
-var update = [
     {//入口文件
         path: './app/*.*',
         to: '../../app/',
-        overwrite: false
-    },
-    {
-        path: './app/scripts/*.*',
-        to: '../../app/scripts/',
         overwrite: false
     },
     {//基础目录结构
@@ -39,6 +26,19 @@ var update = [
         to: '../../app/styles/',
         overwrite: false
     },
+    {//基础视图模块
+        path: './app/scripts/views/**/*.*',
+        to: '../../app/scripts/views/',
+        overwrite: false
+    },
+    {
+        path: './app/scripts/*.*',
+        to: '../../app/scripts/',
+        overwrite: false
+    }
+];
+
+var update = [
     {//复制接口描述
         path: './typings/**/*.*',
         to: '../../typings/',

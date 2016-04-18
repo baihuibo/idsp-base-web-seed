@@ -13,22 +13,22 @@ app.provider("menu", class menu {
         //menu && this.menus.push(menu);
     }
 
-    _query(list, route) {
+    _query(list, route):boolean {
         for (var i = 0; i < list.length; i++) {
             var item = list[i];
             var path = item.route;
             if (path) {
                 var path2 = (path[path.length - 1] == '/') ? path.substr(0, path.length - 1) : path + '/';
                 if (path === route || path2 === route) {
-                    return item;
+                    return true;
                 }
             }
 
-            if (item.childs) {
-                return this._query(item.childs, route);
+            if (item.childs && this._query(item.childs, route)) {
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
     _format(list, routes) {
