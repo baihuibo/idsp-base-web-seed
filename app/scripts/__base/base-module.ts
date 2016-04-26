@@ -72,11 +72,14 @@ angular.module('ngResource').factory('resource', function ($resource) {
     return function resourceFactory(url, defaultParams, actions, options) {
         var cls = $resource(url, defaultParams, actions, options);
 
-        function merge(m, d) {
-            if (angular.isString(m)) {
-                m = {[m]: true};
+        function merge(params, data) {
+            if (angular.isString(params)) {
+                params = {[params]: true};
             }
-            return angular.extend({}, m, d);
+            if (angular.isString(data)) {
+                data = {[data]: true};
+            }
+            return angular.extend({}, params, data);
         }
 
         ref.forEach(function (name) {
@@ -99,6 +102,7 @@ angular.module('ngResource').factory('resource', function ($resource) {
                                     error = a2;
                                     break;
                                 }
+                                params = a1;
                                 success = a2;
                                 error = a3;
                             } else {
@@ -111,7 +115,7 @@ angular.module('ngResource').factory('resource', function ($resource) {
                             if (angular.isFunction(a1)) {
                                 success = a1
                             } else {
-                                data = a1
+                                params = a1
                             }
                             break;
                     }
@@ -120,7 +124,6 @@ angular.module('ngResource').factory('resource', function ($resource) {
                 };
             }
         });
-
         return cls;
     }
 });
