@@ -52,7 +52,8 @@ baseModule.config(($httpProvider, $resourceProvider)=> {
         if (data === void 0) {
             return data;
         } else {
-            return $.param(angular.fromJson(angular.toJson(data)));
+            var param = $.param(angular.fromJson(angular.toJson(data)));
+            return param.replace(/%5B%5D/g, ''); //去掉数组的 []
         }
     };
     value = 'application/x-www-form-urlencoded; charset=UTF-8';
